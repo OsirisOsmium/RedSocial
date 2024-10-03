@@ -1,0 +1,683 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;500;700;900&family=Roboto:wght@300;500;700;900&display=swap');
+
+
+:root {
+    --main-bg-color-0: whitesmoke;
+    --main-bg-color-1: #FED9B7;
+    --main-bg-color-2: #F07167;
+    --main-bg-color-3: rgb(8, 39, 68);
+    --main-bg-color-4: rgb(23,23, 27);
+    --main-bg-color-5: #e5e5e5;
+}
+
+*{
+    margin: 0;
+    font-family:'Fira Sans', sans-serif;
+}
+body{
+    background-color:var(--main-bg-color-0);
+}
+.imagenBuscador{
+    display: flex;
+    flex-direction: row;
+}
+.imagenLogo{
+    background-size: cover;
+    height: 60px;
+    width: 60px;
+}
+
+/*DISTRIBUCIN GRID INDEX*/
+#mainGeneral{
+    display: grid;
+    width: 100vw;
+    height: 250px;
+    grid-template-areas: 
+        "head head head"
+        "navl main navr" 
+        "foot foot foot";
+    grid-template-rows: 100px auto 100px;
+    grid-template-columns: 300px 1fr 300px;
+}
+#navegadorSuperior{
+    grid-area: head;
+}
+#navegadorLateralL{
+    grid-area: navl;
+}
+#navegadorLateralR{
+    grid-area: navr;
+}
+#seccionoContenido{
+    grid-area: main;
+    background-color: var(--main-bg-color-0);
+}
+#piePagina{
+    grid-area: foot;
+    background-color: var(--main-bg-color-0);
+}
+
+
+/*NAVEGADOR SUPERIOR*/
+#navegadorSuperior{
+    background-color: var(--main-bg-color-0);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    padding: 10px;
+
+    position: sticky;
+    top: 100;
+
+}
+#navegadorSuperior .logoView{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-left: 60px;
+    width: auto;
+}
+
+.logoView .inputBuscar{
+    width: 500px;
+    border: solid 2px black;
+    height: 45px;
+    border-radius: 25px;
+    padding: 5px;
+    padding-left: 25px;
+    font-size: 1rem;
+}
+
+.buttonsUser{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 50px;
+    gap: 25px;
+}
+.subirContenido{
+    padding: 10px;
+    background-color: var(--main-bg-color-3);
+    color: whitesmoke;
+    border-radius: 24px;
+    border-style: none;
+    font-size: 0.9rem;
+    height: 45px;
+    width: auto;
+}
+.buttonsUser a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: whitesmoke;
+    background-color: var(--main-bg-color-3);
+    width: 100px;
+    height: 25px;
+    padding: 10px;
+    border-radius: 24px;
+    border-style: none;
+}
+a.perfilUsuarioGeneral{
+    width: 0;
+    margin-left: 10px;
+}
+.perfilUsuarioGeneral img{
+    height: 50px;
+    width: 50px;
+    border-radius: 100px;
+}
+
+
+
+
+/*DISTRIBUCIN FLEX PERFIL*/
+#mainGeneralPerfil{
+    display: flex;
+    flex-direction: column;
+}
+.containerProfile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.banner{
+
+    height: 250px;
+    width: 100vw;
+    object-fit: cover;
+    background-position: center;
+}
+
+#seguirUser:active, #dejarSeguirUser:active, #actNotificacion:active, #desNotificacion:active{
+    zoom: 99%;
+}
+
+.containerInfoUser{
+    /* gap: 25px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profilePhoto{
+    height: 150px;
+    width: 150px;
+    border-radius: 100px;
+    object-fit: cover;
+    background-position: center;
+    border: solid 2px black;
+}
+.userName{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.userName h2{
+    font-weight: 700;
+    font-size: 2rem;
+}
+.userName h3{
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.informationProfile{
+    margin-top: -75px;
+    border-top-right-radius: 100%;
+    border-top-left-radius: 100%;
+}
+.informationProfile, .personalInfrmation{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+
+}
+.opcionesSeguir{
+    display: flex;
+    gap: 50px;
+}
+.opcionesSeguir input{
+    border-style: none;
+    background-color: var(--main-bg-color-3);
+    color: var(--main-bg-color-0);
+    padding: 10px;
+    width: 180px;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+}
+
+
+.cifrasCuentas{
+    display: flex;
+    gap: 50px;
+}
+.cifrasCuenta{
+    display: flex;
+    align-items: flex-end;
+    gap: 5px;
+}
+.cifrasCuenta .contNumCuenta{
+    font-weight: 700;
+    font-size: 2rem;
+}
+.cifrasCuenta .txtCuenta{
+    font-size: 1.3rem;
+}
+
+
+
+/*SECTION CONTENIDO*/
+#seccionContenido{
+    display: flex;
+    justify-content: center;
+}
+.postsContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 15px;
+}
+.postsContainerProfile{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    width: 1170px;
+    gap: 30px;
+    padding: 15px;
+}
+.postContainer{
+    width: 500px;
+    height: auto;
+    padding: 20px;
+    background-color: var(--main-bg-color-0);
+    box-shadow: 0 0 10px var(--main-bg-color-5);
+    border-radius: 15px;
+}
+.headerPost{
+    font-size: 1rem;
+    display: flex;
+    gap: 50px;
+}
+
+.infoUserPost{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    color: black;
+    text-decoration: none;
+}
+.infPost{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.infoUserPost .imagenPerfil{
+    height: 60px;
+    width: 60px;
+    background-position: center;
+    border-radius: 100%;
+    object-fit: cover;
+}
+.textPost{
+    font-size: 1rem;
+    font-weight: 300;
+    text-align: justify;
+    padding: 20px;
+}
+.imagenP{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+#seccionContenido .imagenPost{
+    height: 250px;
+    max-width: 80%;
+    border-radius: 15px;
+}
+.containerImgPost{
+    display: flex;
+    justify-content: center;
+}
+.estadosPost{
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+}
+.estadoPost{
+    display: flex;
+    gap: 10px;
+    border-style: none;
+    background-color: var(--main-bg-color-0);
+    font-size: 1rem;
+    text-decoration: none;
+    color: black;
+}
+.fa-regular:active{
+    color: #F07167;
+}
+.textPostTitle{
+    padding: 20px;
+}
+
+
+
+/*NAVEGADR LATERAL L*/
+#navLateralesL{
+    border-radius: 25px;
+    background-color: var(--main-bg-color-5);
+    padding: 25px;
+    width: 200px;
+    position: fixed;
+    top: 100px;
+    margin-left: 50px;
+}
+#navegadorLateralL a{
+    display: flex;
+    text-decoration: none;
+    color: black;
+    font-size: 1.2rem;
+    gap: 10px;
+    padding: 20px;
+}
+
+
+/*NAVEGADOR LATERAL R*/
+#navLateralesR{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    position: fixed;
+    top: 100px;
+    height: 600px;
+    padding-bottom: 25px;
+    overflow-y:auto;
+}
+.containerPerfiles{
+    display: flex;
+    padding: 25px;
+    border-radius: 25px;
+    background-color: var(--main-bg-color-5);
+    width: 200px;
+    margin-right: 50px;
+    flex-direction: column;
+    gap: 25px;
+}
+.perfil, .comunidad{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 50px;
+    padding: 10px;
+    gap: 10px;
+    color: black;
+    text-decoration: none;
+}
+.perfil img, .comunidad img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    background-position: center;
+}
+.registerContainer{
+    width: 60%;
+    height: 60%;
+    padding: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 25px;
+    background-color: whitesmoke;
+    box-shadow: 10px 10px 20px;
+}
+    
+    
+
+
+    /*CONTENIDO DEL FORMULARIO*/
+    .informationDecoration{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .informacionDescripcionTitulo{
+        width: 250px;
+    }
+    .informacionDescripcionTitulo h2{
+        font-size: 2rem;
+        margin: 0;
+    }
+    .informacionDescripcion{
+        width: 350px;
+    }
+    .informacionDescripcion a{
+        color: var(--main-bg-color-2);
+        text-decoration: none;
+    }
+    .imagenRegister{
+        background-size: cover;
+        height: 350px;
+        width: 100%;
+    }
+    
+    
+    form{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }
+    .mailForm input, .passwordForm input, .usernameForm input, .dateForm input, .genderForm select, .mailUsernameForm input, .photoForm input{
+        width: 300px;
+        height: 25px;
+        border-style: none;
+        padding: 8px;
+        font-size: 0.8rem;
+        background-color: transparent;
+        border-bottom: solid 1px white;
+    }
+    .infoForm{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+    }
+    .buttonForm{
+        display: flex;
+        justify-content: center;
+    }
+    .buttonForm input{
+        width: 300px;
+        height: 40px;
+        border-radius: 10px;
+        border-style: none;
+        background-color: var(--main-bg-color-1);
+        font-size: 1rem;
+        padding: 5px;
+        font-weight: 500;
+    }
+    
+    
+    /*LOG IN*/
+    #loginPage, #registerPage{
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+        font-size: 1rem;
+        background: linear-gradient(70deg, var(--main-bg-color-3), var(--main-bg-color-4));
+    }
+    .loginContainer{
+        width: 30%;
+        height: 60%;
+        padding: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 25px;
+        background-color: whitesmoke;
+        box-shadow: 10px 10px 20px; 
+    }
+    .cavezeraLogIn{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .cavezeraLogIn h1{
+        font-size: 3rem;
+        margin: 0px;
+    }
+    .additionalForm{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 50px;
+    }
+    .additionalForm a{
+        text-decoration: none;
+        color:var(--main-bg-color-2);
+        opacity: 0.7;
+    }
+    .barraInferior{
+        height: 10px;
+        width: 110%;
+        background-color: var(--main-bg-color-1);
+        border-radius: 10px;
+    }
+    
+
+
+
+
+
+
+
+
+/*EDITAR PERFIL*/
+
+
+#bannerEdit{
+    filter: brightness(100%);
+    z-index: -1;
+    transition: 0.5s;
+}
+.contenedorBanner i{
+    position: absolute;
+    font-size: 3rem;
+    opacity: 0;
+    transition:0.5s;
+    z-index: 1;
+    color: white;
+}
+.contenedorBanner{
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+.contenedorBanner:hover #gearBanner, .contenedorBanner:hover #bannerEdit{
+    opacity: 1;
+    filter: brightness(50%);
+}
+#profilePhtoEdit{
+    filter: brightness(100%);
+    z-index: 1;
+    transition: 0.5s;
+}
+.contenedorPerfil i{
+    position: absolute;
+    font-size: 3rem;
+    opacity: 0;
+    transition:0.5s;
+    border-radius: 100%;
+    z-index: 2;
+    color: white;
+}
+.contenedorPerfil{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    border-radius: 100%;
+}
+.contenedorPerfil:hover #gearEditProfile {
+    opacity: 50%;
+}
+
+
+
+
+
+
+
+#personalInfoEdit{
+    width: 80%;
+    padding: 35px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+#usernameEdit, #nameEdit, #mailEdit1, #mailEdit2,#passwordEdit1, #passwordEdit2{
+    width: 400px;
+    height: 40px;
+    border-radius: 10px;
+    border-style: none;
+    font-size: 1rem;
+    background-color: var(--main-bg-color-5);
+}
+
+#saveChanges{
+    width: 200px;
+    height: 40px;
+    border-style: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    padding: 10px;
+}
+
+#containerProfileEdit{
+    padding-bottom: 50px;
+}
+
+
+
+
+/* Publicaciones */
+.subirContenido{
+
+}
+.subirContenido form{
+
+}
+.contTitle{
+
+}
+.contDescription{
+
+}
+.contFile{
+    
+}
+#modifyPublication{
+    color: black;
+}
+
+
+
+
+
+
+/* Editar publicaciones */
+form input#titlePub{
+    width: 450px;
+    border-style: none;
+    background-color: transparent;
+    border-bottom: solid 1px;
+}
+form input#descriptionPub{
+    width: 450px;
+    height: 50px;
+    border-style: none;
+    background-color: transparent;
+    border-bottom: solid 1px;
+}
+
+form input#filePub{
+    display: none;
+}
+form label#labelFilePub{
+    background-color: var(--main-bg-color-3);
+    padding: 15px;
+    border-radius: 10px;
+    color: white;
+    margin-top: 10px;
+}
+#eliminarPub{
+    text-decoration: none;
+    color: black;
+}
+
+
+
+
+.containerProfile .espacioBanner{
+    display: flex;
+    justify-content: center;
+}
